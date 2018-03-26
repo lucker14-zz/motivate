@@ -8,7 +8,7 @@ body, html
 
 
 *
-    font-family "Calibre"
+    font-family "Calibri", sans-serif
     box-sizing border-box
 
     &:focus, &:active
@@ -38,3 +38,27 @@ ul, li
     padding 0
     margin 0
     list-style-type none
+    
+
+div.absolute-background
+    position absolute
+
+div.container
+    display flex
+    position relative
+    
+    &--outer
+        width 100vw
+        min-height 500px
+        flex-flow column wrap
+        justify-content center
+        align-items center
+        
+    &--inner
+        width 1280px
+        flex-flow column wrap
+        justify-content center
+        align-items center
+        
+        @media screen and (max-width 1280px)
+            width 100%

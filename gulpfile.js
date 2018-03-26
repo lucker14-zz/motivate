@@ -19,9 +19,10 @@ const i18n = require('gulp-html-i18n');
 gulp.task('connect', function() {
   connect.server({
     root: 'build',
-    index: 'index-en.html',
+    index: 'index.html',
     host: "0.0.0.0",
-    livereload: true
+    livereload: true,
+    port: 8088,
   });
 });
 
