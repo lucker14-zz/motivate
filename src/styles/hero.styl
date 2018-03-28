@@ -1,4 +1,5 @@
 div.container.container--outer.hero
+    min-height 66.04193139vw
     div.absolute-background
         background-image url('assets/bg-hero.jpg')
         background-size cover
@@ -8,12 +9,30 @@ div.container.container--outer.hero
         height 66.04193139vw
         
     div.container.container--inner
+        &.absolute
+            position absolute
+            bottom 0
+            left 0
+            right 0 
+            margin-left auto
+            margin-right auto
         div.content-holder.content-holder--hori
             max-width 1120px
+            width 100%
+            justify-content space-between
             
             div.content-box
-                max-width 300px
+                justify-content space-around
+                padding 20px
+                min-height 245px
+                width 300px
+                background-color rgba(255,255,255,.6)
                 
                 span.number
                     font-size 48px
+                    font-weight 700
                     color $text_black
+                    
+                p
+                    text-align center
+                    
