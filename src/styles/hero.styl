@@ -8,6 +8,23 @@ div.container.container--outer.hero
         width 100vw
         height 66.04193139vw
         
+        @media screen and (max-width 950px)
+            height 100%
+        
+    img#logo
+        width 618px
+        height 165px
+        
+        @media screen and (max-width 1130px)
+            margin-bottom 14vw
+            
+        @media screen and (max-width 950px)
+            margin-bottom 0
+            
+        @media screen and (max-width 700px)
+            width 90vw
+            height 24.02912621vw
+        
     div.container.container--inner
         &.absolute
             position absolute
@@ -16,6 +33,11 @@ div.container.container--outer.hero
             right 0 
             margin-left auto
             margin-right auto
+            
+            @media screen and (max-width 950px)
+                position unset
+                margin-top 50px
+
         div.content-holder.content-holder--hori
             max-width 1120px
             width 100%
@@ -27,6 +49,13 @@ div.container.container--outer.hero
                 min-height 245px
                 width 300px
                 background-color rgba(255,255,255,.6)
+                
+                @media screen and (max-width 950px)
+                    width 30%
+                    
+                @media screen and (max-width 750px)
+                    width 100%
+                    margin-bottom 20px
                 
                 span.number
                     font-size 48px

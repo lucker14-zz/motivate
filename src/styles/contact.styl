@@ -1,5 +1,9 @@
 div.container.container--outer.contact
     background-color #daddda
+    background-image url('assets/bg-contact.jpg')
+    background-size cover
+    background-position center
+    background-repeat no-repeat
     div.container.container--inner
         h1
             margin-bottom 40px
@@ -13,6 +17,23 @@ div.container.container--outer.contact
                 width 340px
                 padding 20px
                 background-color rgba(255,255,255,.6)
+                
+                &.hidden
+                    opacity: 0; 
+                    pointer-events: none;
+                    
+                    @media screen and (max-width 850px)
+                        display none
+                
+                @media screen and (max-width 1130px)
+                    width 30%
+                    
+                @media screen and (max-width 850px)
+                    width 48%
+                    
+                @media screen and (max-width 550px)
+                    width 100%
+                    margin-bottom 20px
                 
                 div.text-content
                     width 100%
