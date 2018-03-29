@@ -1,0 +1,96 @@
+div.container.container--outer.popup
+    position fixed
+    z-index 2000
+    background-color rgba(0,0,0,.7)
+    top 0
+    left 0
+    width 100vw
+    height 100vh
+    
+    @media screen and (max-width 500px)
+        padding 5px
+    
+    div.container.container--inner
+        div.popup
+            width 100%
+            height 100%
+            max-width 800px
+            width 800px
+            max-height 400px
+            height 400px
+            background-color #daddda
+            border-radius 20px
+            position relative
+            
+            @media screen and (max-width 800px)
+                max-width unset
+                width auto
+                height auto
+                
+            @media screen and (max-width 600px)
+                max-height unset
+                height auto
+                
+            div.popup-close
+                cursor pointer
+                position absolute
+                right 20px
+                top 16px
+                z-index 2001
+                
+                p
+                    color $text_red
+                    cursor pointer
+                    user-select none
+                    font-weight bold
+                    font-size 20px
+                
+            div.content-holder
+                @media screen and (max-width 500px)
+                    flex-flow column wrap
+
+                div.content-box
+                    div.text-content
+                        flex-flow column wrap
+                        justify-content flex-start
+                        align-items flex-start
+                        padding 20px
+                        
+                        @media screen and (max-width 500px)
+                            max-height: 200px;
+                            overflow: scroll;
+                            flex-flow: column nowrap;
+                        
+                        h2
+                            text-align left
+                            margin-bottom 10px
+                            
+                        h3
+                            margin-bottom 8px
+
+                    div.photo
+                        background-size cover
+                        background-position center
+                        background-repeat no-repeat
+                        background-image url('assets/team-photo/1802_jan.jpg')
+                        width 266px
+                        height 195px
+                        border-top-left-radius 20px
+                        
+                        @media screen and (max-width 500px)
+                            width 100%
+                        
+                    &:nth-child(1)
+                        width 33%
+                        height 100%
+                        
+                        @media screen and (max-width 500px)
+                            width 100%
+                        
+                    &:nth-child(2)
+                        width 67%
+                        height 100%
+                        
+                        @media screen and (max-width 500px)
+                            width 100%
+            

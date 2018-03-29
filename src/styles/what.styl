@@ -1,24 +1,46 @@
 div.container.container--outer.what
     background-color rgba(34, 121, 156, .3)
     div.container.container--inner
-        h2
-            margin-bottom 40px
-        div.content-holder
+        flex-flow row wrap
+        justify-content space-between 
+        align-items flex-start
+        
+        div.text-content
+            flex-flow column wrap
+            justify-content center
+            align-items center
             width 100%
+            
+            p
+                margin-bottom 20px
+
+
+        h2
+            margin-bottom 20px
+        div.content-holder
+            width 45%
             max-width 1120px
             margin-bottom 40px
+            
+            @media screen and (max-width 850px)
+                max-width 100%
+                width 100%
+                margin-bottom 0px
+
+
             div.content-box
                 background-color rgba(255,255,255,.6)
                 padding 20px
-                max-width 340px
+                max-width 100%
+                justify-content flex-start
+                margin-bottom 20px
                 
-                @media screen and (max-width 1130px)
-                    max-width 30%
                     
                 @media screen and (max-width 850px)
                     max-width 100%
                     width 100%
                     margin-bottom 20px
+                    min-height 0px
                 
                 h3
                     margin 30px 0

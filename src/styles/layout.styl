@@ -8,7 +8,7 @@ body, html
 
 
 *
-    font-family "Calibri", sans-serif
+    font-family "Roboto", sans-serif
     box-sizing border-box
 
     &:focus, &:active
@@ -76,6 +76,11 @@ div.content-holder
         flex-flow row wrap
         justify-content space-between
         align-items flex-start
+        
+    &--verti
+        flex-flow column wrap
+        justify-content center
+        align-items flex-start
 
 
 div.content-box
@@ -85,3 +90,6 @@ div.content-box
 
     &--vertical
         flex-flow column wrap
+        
+.hidden
+    display none !important
