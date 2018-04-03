@@ -1,6 +1,11 @@
 div.container.container--outer.hero
     height 66.04193139vw
     max-height 93vh
+    
+    @media screen and (max-width 950px)
+        max-height unset
+        height auto
+
     div.absolute-background
         background-image url('assets/bg-hero.jpg')
         background-size cover
