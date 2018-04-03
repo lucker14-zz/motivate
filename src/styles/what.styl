@@ -5,6 +5,11 @@ div.container.container--outer.what
         justify-content space-between 
         align-items flex-start
         
+        h1
+            width 100%
+            text-align center
+            margin-bottom 20px
+        
         div.text-content
             flex-flow column wrap
             justify-content center
@@ -24,7 +29,6 @@ div.container.container--outer.what
             max-width 1120px
             padding 0 10px
             max-width 50%
-            margin-bottom 40px
             
             
             @media screen and (max-width 850px)
@@ -34,14 +38,14 @@ div.container.container--outer.what
 
 
             div.content-box
-                justify-content flex-start
-                align-items flex-start
+                justify-content center
+                align-items center
+                flex-flow column wrap
 
-                background-color rgba(255,255,255,.6)
+                // background-color rgba(255,255,255,.6)
                 padding 20px
                 max-width 100%
                 min-height 175px
-                justify-content flex-start
                 margin-bottom 20px
                 
                     
@@ -64,12 +68,12 @@ div.container.container--outer.what
                         max-width 100%
                     
                     h3
-                        text-align left
+                        text-align center
                         margin-top 0px
                         margin-bottom 15px
                         
                 img
-                    margin-right 20px
+                    margin-bottom 20px
                     
                     @media screen and (max-width 550px)
                         margin-right 0
@@ -80,7 +84,7 @@ div.container.container--outer.what
                     text-align center
                     
                 p 
-                    text-align left
+                    text-align center
                     
                     i
                         font-style normal
