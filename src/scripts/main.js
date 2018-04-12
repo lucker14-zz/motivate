@@ -1,24 +1,3 @@
-var popup_container = document.querySelector('.container--outer.popup')
-
-// opening of popup
-var openers = [].slice.call(document.querySelectorAll('.person'))
-openers.forEach(function(item, index){
-    item.addEventListener('click', function(){
-        if (popup_container.classList.contains('hidden')) 
-            popup_container.classList.remove('hidden')
-    })
-})
-
-
-// popup close btn
-var popup_close = document.querySelector('.popup-close')
-popup_close.addEventListener('click', function(){
-    if (!popup_container.classList.contains('hidden'))
-        popup_container.classList.add('hidden')
-})
-
-
-
 // navigation scrolling
 $('body').on('click', 'ul.nav a', function(e){
     e.preventDefault();

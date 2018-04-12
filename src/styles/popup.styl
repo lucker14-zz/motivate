@@ -50,16 +50,19 @@ div.container.container--outer.popup
                     flex-flow column wrap
 
                 div.content-box
+                    
+                    &.sliding
+                        max-height 400px
+                        overflow scroll
+                        
+                        @media screen and (max-width 600px)
+                            max-height 200px
+
                     div.text-content
                         flex-flow column wrap
                         justify-content flex-start
                         align-items flex-start
                         padding 20px
-                        
-                        @media screen and (max-width 500px)
-                            max-height: 200px;
-                            overflow: scroll;
-                            flex-flow: column nowrap;
                         
                         h2
                             text-align left
