@@ -16,7 +16,6 @@ $(document).scroll(function(){
     var contact = $('#contact').offset().top - 80;
 
     var slider = $('#hero').height() + 65;
-    console.log(slider)
     var menu = $('ul.nav');
     var y = $(this).scrollTop();
     if(y < slider)

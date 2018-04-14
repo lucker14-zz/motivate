@@ -1,0 +1,27 @@
+#slider {
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    position: relative;
+    z-index: 0;
+    text-align: center
+}
+
+#slider div {
+    background-position: center bottom;
+    background-size: cover;
+    height: 100%;
+    width: 100%
+}
+
+#slider div:first-child {
+    background-image: url('assets/rotator/01.jpg')
+}
+
+#slider div:nth-of-type(2) {
+    background-image: url('assets/rotator/02.jpg')
+}
+
+#slider div:last-child {
+    background-image: url('assets/rotator/03.jpg')
+}

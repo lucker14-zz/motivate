@@ -1,5 +1,5 @@
 div.container.container--outer.what
-    background-color rgba(34, 121, 156, .3)
+    background-color #bed6e2
     div.container.container--inner
         flex-flow row wrap
         justify-content space-between 
@@ -24,11 +24,19 @@ div.container.container--outer.what
         h2
             margin-bottom 10px
             
+        div.verti-line
+            width 1px
+            height 1100px
+            background-color #a1a1a1
+            
+            @media screen and (max-width 850px)
+                display none
+            
         div.content-holder
             width auto
             max-width 1120px
             padding 0 10px
-            max-width 50%
+            max-width 49%
             
             
             @media screen and (max-width 850px)
@@ -47,6 +55,14 @@ div.container.container--outer.what
                 max-width 100%
                 min-height 320px
                 margin-bottom 20px
+                
+                &.heading
+                    min-height 0px
+                    width 100%
+                    
+                    h2
+                        width 100%
+                        text-align center
                 
                     
                 @media screen and (max-width 850px)

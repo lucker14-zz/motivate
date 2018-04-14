@@ -1,6 +1,6 @@
 div.container.container--outer.who-upper
     background-color #daddda
-    min-height 680px
+    min-height 590px
     
     @media screen and (max-width 600px)
         min-height 820px
@@ -14,9 +14,14 @@ div.container.container--outer.who-upper
     
     div.absolute-background
         background-image url('assets/bg-who.png')
-        background-size 1352px 680px
+        background-size 1260px 590px
         width 1280px
         height 680px
+        
+
+        @media screen and (max-width 1260px)
+            background-size cover
+            height 100%
         
         @media screen and (max-width 750px)
             background-image none            
@@ -40,4 +45,4 @@ div.container.container--outer.who-upper
                 font-size 24px
                 
             h2
-                margin-bottom 10px
+                margin-bottom 20px
