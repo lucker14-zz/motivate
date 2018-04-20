@@ -5,6 +5,9 @@ div.container.container--outer.who-upper
     background-size 1260px 590px
     background-repeat no-repeat
     
+    &.en
+        padding 40px 40px 17px
+    
     @media screen and (max-width 600px)
         min-height 820px
         
@@ -17,14 +20,18 @@ div.container.container--outer.who-upper
     
     div.absolute-background
         background-image url('assets/bg-who.jpg')
-        background-size 1260px 590px
+        background-size cover
         width 1280px
-        height 680px
+        height 640px
+        max-height 100%
         
+        &.en
+            width 1350px
 
         @media screen and (max-width 1260px)
             background-size cover
             height 100%
+            max-width 100vw
         
         @media screen and (max-width 750px)
             background-image none            
@@ -46,6 +53,9 @@ div.container.container--outer.who-upper
             p.bigger
                 margin-bottom 30px
                 font-size 24px
+                
+            p:not(.bigger)
+                max-width 500px
                 
             h2
                 margin-bottom 20px

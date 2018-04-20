@@ -1,6 +1,6 @@
 div.container.container--outer.hero
     height 66.04193139vw
-    max-height 93vh
+    max-height 90vh
     
     @media screen and (max-width 950px)
         max-height unset
@@ -16,10 +16,22 @@ div.container.container--outer.hero
         
         @media screen and (max-width 950px)
             height 100%
+            
+        @media screen and (max-width 700px)
+            min-height 100%
+            
+        div.image
+            @media screen and (max-width 700px)
+                min-height 100%
         
     img#logo
         width 618px
         height 165px
+        
+        @media screen and (max-height 800px)
+            margin-bottom 36vh
+            width: 400px;
+            height: 107px;
         
         @media screen and (max-width 1130px)
             margin-bottom 14vw
@@ -51,14 +63,14 @@ div.container.container--outer.hero
             
             div.content-box
                 justify-content space-around
-                padding 20px 15px
-                min-height 245px
+                padding 20px
+                min-height 260px
                 width 300px
                 background-color rgba(255,255,255,.6)
                 
                 @media screen and (max-width 950px)
                     width 30%
-                    min-height 270px
+                    min-height 285px
                     
                 @media screen and (max-width 750px)
                     width 100%
