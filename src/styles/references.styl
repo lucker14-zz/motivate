@@ -10,12 +10,18 @@ div.container.container--outer.references
                 margin-bottom 20px
                 align-items flex-start
                 max-width 47%
+                width 47%
                 padding 20px
                 border 1px solid #daddda
+                
+                &.not-visible
+                    @media screen and (max-width 750px)
+                        display none
                 
                 @media screen and (max-width 750px)
                     max-width 100%
                     width 100%
+                    
                 
                 span.right
                     position absolute

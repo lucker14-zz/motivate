@@ -32,7 +32,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
-    <div class="container container--outer popup hidden">
+    <div class="container container--outer popup hidden" id="person">
         <div class="container container--inner">
             <div class="popup">
                 <div class="popup-close absolute-background">
@@ -47,6 +47,23 @@
                             <h2 class="name" style='text-transform: none;'>Joe Briggs</h2>
                             <h3 style='text-transform: none;'>Marketer</h3>
                             <p class="body_text">Máme to štěstí, že jsme ještě zažili dobu, kdy na český trh vstupovaly velké značky a vytvářely se nové kategorie produktů a služeb. Měli jsme možnost se aktivně podílet na rebrandingu či repositioningu velkých značek. Své znalosti z oblasti marketingové komunikace nečerpáme z knížek a case studies, ale z osobní zkušenosti, z proher a výher, které jsme viděli kolem sebe. Díky tomu vám můžeme být vhodnými partnery při diskusi nad dalším směřováním vaší značky a volbě vhodné komunikační strategie.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container--outer popup hidden" id="you">
+        <div class="container container--inner">
+            <div class="popup">
+                <div class="popup-close absolute-background">
+                    <p>&times;</p>
+                </div>
+                <div class="container content-holder">
+                    <div class="container content-box sliding">
+                        <div class="container text-content huge">
+                            <p class="body_text">${{ index.popup_you_text }}$</p>
                         </div>
                     </div>
                 </div>
@@ -221,7 +238,7 @@
                     <p>${{ index.references_p6 }}$</p>
                     <span class="right">${{ index.references_name6 }}$</span>
                 </div>
-                <div class="container content-box content-box--vertical" style='opacity: 0;'>
+                <div class="container content-box content-box--vertical not-visible" style='opacity: 0;'>
                     <div class="logo">
                         <img src="assets/billa.jpg" alt="Billa" width="140" height="53">
                     </div>
@@ -293,8 +310,9 @@
 
 
 
-    <div class="container container--outer offer first" data-parallax="scroll" data-bleed='50' data-speed='0.5' data-image-src="assets/bg-what.jpg">
-        <!-- <div class="absolute-background"></div> -->
+    <div class="container container--outer offer first" >
+        <!-- data-parallax="scroll" data-bleed='50' data-speed='0.5' data-image-src="assets/bg-what.jpg" -->
+        <div class="absolute-background"></div>
         <div class="container container--inner">
             <h1>${{ index.offer_h1 }}$</h1>
             <h2>${{ index.offer_h2 }}$</h2>
@@ -524,13 +542,45 @@
     <script type="text/javascript" src="assets/fadeSlideShow.js"></script>
     <script type="text/javascript" src="parallax.min.js"></script>
     <script>
-        var popup_container = document.querySelector('.container--outer.popup')
+        // secondary popup
+        var you_popup = document.querySelector('.container--outer.popup#you')
+        var you_popup_close = document.querySelector('.container--outer.popup#you .popup-close')
+        var you_opener = document.querySelector('.person#you')
+
+        you_opener.addEventListener('click', function(){
+            if(you_popup.classList.contains('hidden')){
+                you_popup.classList.remove('hidden')
+            }
+        })
+
+        you_popup_close.addEventListener('click', function(){
+            if (!you_popup.classList.contains('hidden'))
+                you_popup.classList.add('hidden')
+        })
+
+        you_popup.addEventListener('click', function(e){
+            if(e.target.classList.contains('popup')){
+                if (!you_popup.classList.contains('hidden'))
+                    you_popup.classList.add('hidden')
+            }
+        })
+
+        // IE hacks
+        var isIE = document.body.style.msTouchAction !== undefined;
+
+        if(!isIE){
+            $('.container.container--outer.offer.first').parallax({imageSrc: 'assets/bg-what.jpg', speed: 0.5, bleed: 50});
+        }
+
+
+        var popup_container = document.querySelector('.container--outer.popup#person')
 
         // opening of popup
         var openers = [].slice.call(document.querySelectorAll('.person'))
         openers.forEach(function(item, index){
             item.addEventListener('click', function(e){
-                swapContent(e)
+                if(!e.target.classList.contains('social'))
+                    swapContent(e)
             })
         })
 
@@ -542,7 +592,7 @@
                 popup_container.classList.add('hidden')
         })
 
-        var popup_bg = document.querySelector('.container--outer.popup')
+        var popup_bg = document.querySelector('.container--outer.popup#person')
         popup_bg.addEventListener('click', function(e){
             if(e.target.classList.contains('popup')){
                 if (!popup_container.classList.contains('hidden'))
@@ -575,43 +625,43 @@
             'alias': 'smida',
             'surename': '${{ index.popup_p1_name }}$',
             'position': '${{ index.popup_p1_position }}$',
-            'body_text': '${{ index.popup_p1_body }}$',
+            'body_text': "${{ index.popup_p1_body }}$",
             'photo_url': 'url("assets/team-photo/1802_jan.jpg")'
         },{
             'alias': 'ziska',
             'surename': '${{ index.popup_p2_name }}$',
             'position': '${{ index.popup_p2_position }}$',
-            'body_text': '${{ index.popup_p2_body }}$',
+            'body_text': "${{ index.popup_p2_body }}$",
             'photo_url': 'url("assets/team-photo/1802_jiri.jpg")'
         },{
             'alias': 'smida2',
             'surename': '${{ index.popup_p3_name }}$',
             'position': '${{ index.popup_p3_position }}$',
-            'body_text': '${{ index.popup_p3_body }}$',
+            'body_text': "${{ index.popup_p3_body }}$",
             'photo_url': 'url("assets/team-photo/1802_petr.jpg")'
         },{
             'alias': 'prevratil',
             'surename': '${{ index.popup_p4_name }}$',
             'position': '${{ index.popup_p4_position }}$',
-            'body_text': '${{ index.popup_p4_body }}$',
+            'body_text': "${{ index.popup_p4_body }}$",
             'photo_url': 'url("assets/team-photo/1802_martin.jpg")'
         },{
             'alias': 'polackova',
             'surename': '${{ index.popup_p5_name }}$',
             'position': '${{ index.popup_p5_position }}$',
-            'body_text': '${{ index.popup_p5_body }}$',
+            'body_text': "${{ index.popup_p5_body }}$",
             'photo_url': 'url("assets/team-photo/1802_iva.jpg")'
         },{
             'alias': 'stejskalova',
             'surename': '${{ index.popup_p6_name }}$',
             'position': '${{ index.popup_p6_position }}$',
-            'body_text': '${{ index.popup_p6_body }}$',
+            'body_text': "${{ index.popup_p6_body }}$",
             'photo_url': 'url("assets/team-photo/1802_bara.png")'
         },{
             'alias': 'samkova',
             'surename': '${{ index.popup_p7_name }}$',
             'position': '${{ index.popup_p7_position }}$',
-            'body_text': '${{ index.popup_p7_body }}$',
+            'body_text': "${{ index.popup_p7_body }}$",
             'photo_url': 'url("assets/team-photo/1802_sarka_spatne_foto.jpg")'
         }]
 

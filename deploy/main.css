@@ -18,11 +18,7 @@ h1 {
   font-size: 42px;
   font-family: 'Roboto' sans-serif;
   color: #ab2628;
-  text-transform: lowercase;
   margin-bottom: 10px;
-}
-h1:first-letter {
-  text-transform: capitalize;
 }
 h2 {
   font-size: 28px;
@@ -30,11 +26,7 @@ h2 {
   color: #3b3c3d;
   width: 100%;
   text-align: center;
-  text-transform: lowercase;
   margin-bottom: 10px;
-}
-h2:first-letter {
-  text-transform: capitalize;
 }
 h3 {
   font-size: 20px;
@@ -70,6 +62,7 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  max-width: 100%;
 }
 *:focus,
 *:active {
@@ -658,6 +651,7 @@ div.background {
   font-size: 16px !important;
   line-height: 30px;
   height: 60px;
+  min-width: 85px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -1257,6 +1251,16 @@ div.container.container--outer.hero div.absolute-background {
     height: 100%;
   }
 }
+@media screen and (max-width: 700px) {
+  div.container.container--outer.hero div.absolute-background {
+    min-height: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  div.container.container--outer.hero div.absolute-background div.image {
+    min-height: 100%;
+  }
+}
 div.container.container--outer.hero img#logo {
   width: 618px;
   height: 165px;
@@ -1341,15 +1345,15 @@ div.container.container--outer.hero div.container.container--inner div.content-h
   -ms-justify-content: space-around;
   -o-justify-content: space-around;
   justify-content: space-around;
-  padding: 20px 15px;
-  min-height: 245px;
+  padding: 20px;
+  min-height: 260px;
   width: 300px;
   background-color: rgba(255,255,255,0.6);
 }
 @media screen and (max-width: 950px) {
   div.container.container--outer.hero div.container.container--inner div.content-holder.content-holder--hori div.content-box {
     width: 30%;
-    min-height: 270px;
+    min-height: 285px;
   }
 }
 @media screen and (max-width: 750px) {
@@ -1377,6 +1381,9 @@ div.container.container--outer.who-upper {
   background-size: 1260px 590px;
   background-repeat: no-repeat;
 }
+div.container.container--outer.who-upper.en {
+  padding: 40px 40px 14px;
+}
 @media screen and (max-width: 600px) {
   div.container.container--outer.who-upper {
     min-height: 820px;
@@ -1401,6 +1408,12 @@ div.container.container--outer.who-upper div.absolute-background {
   background-size: cover;
   width: 1280px;
   height: 640px;
+  max-height: 100%;
+  left: 0;
+  right: 0;
+}
+div.container.container--outer.who-upper div.absolute-background.en {
+  width: 1350px;
 }
 @media screen and (max-width: 1260px) {
   div.container.container--outer.who-upper div.absolute-background {
@@ -1410,6 +1423,7 @@ div.container.container--outer.who-upper div.absolute-background {
     -o-background-size: cover;
     background-size: cover;
     height: 100%;
+    max-width: 100vw;
   }
 }
 @media screen and (max-width: 750px) {
@@ -1471,8 +1485,14 @@ div.container.container--outer.references div.container.container--inner div.con
   -o-align-items: flex-start;
   align-items: flex-start;
   max-width: 47%;
+  width: 47%;
   padding: 20px;
   border: 1px solid #daddda;
+}
+@media screen and (max-width: 750px) {
+  div.container.container--outer.references div.container.container--inner div.content-holder div.content-box.not-visible {
+    display: none;
+  }
 }
 @media screen and (max-width: 750px) {
   div.container.container--outer.references div.container.container--inner div.content-holder div.content-box {
@@ -1484,7 +1504,7 @@ div.container.container--outer.references div.container.container--inner div.con
   position: absolute;
   right: 20px;
   bottom: 20px;
-  max-width: 80%;
+  max-width: 90%;
   text-align: right;
 }
 div.container.container--outer.references div.container.container--inner div.content-holder div.content-box p {
@@ -1642,6 +1662,7 @@ div.container.container--outer.what div.container.container--inner div.content-h
   max-width: 1120px;
   padding: 0 10px;
   max-width: 49%;
+  width: 49%;
 }
 @media screen and (max-width: 850px) {
   div.container.container--outer.what div.container.container--inner div.content-holder {
@@ -1710,6 +1731,7 @@ div.container.container--outer.what div.container.container--inner div.content-h
   flex-flow: column wrap;
   padding: 20px;
   max-width: 100%;
+  width: 100%;
   min-height: 320px;
   margin-bottom: 20px;
 }
@@ -1857,6 +1879,8 @@ div.container.container--outer.offer div.absolute-background {
   min-height: 100%;
   max-height: 100%;
   background-color: rgba(0,0,0,0.3);
+  background-image: url("assets/bg-what.jpg");
+  display: none;
 }
 div.container.container--outer.offer div.container.container--inner h1 {
   margin: 10px 0;
@@ -1964,11 +1988,11 @@ div.container.container--outer.team div.container.container--inner div.content-h
   margin: 0 20px;
   margin-bottom: 40px;
 }
-div.container.container--outer.team div.container.container--inner div.content-holder div.content-box.person:hover:not(.empty) {
+div.container.container--outer.team div.container.container--inner div.content-holder div.content-box.person:hover {
   cursor: pointer;
 }
-div.container.container--outer.team div.container.container--inner div.content-holder div.content-box.person:hover:not(.empty) .text-box {
-  background-color: #647b86;
+div.container.container--outer.team div.container.container--inner div.content-holder div.content-box.person:hover .text-box {
+  background-color: #455258;
 }
 div.container.container--outer.team div.container.container--inner div.content-holder div.content-box.person--team div.text-box {
   border-top: 2px solid #ab2628;
@@ -2016,10 +2040,12 @@ div.container.container--outer.team div.container.container--inner div.content-h
   width: 100%;
 }
 div.container.container--outer.team div.container.container--inner div.content-holder div.content-box div.text-box {
+  min-width: 100%;
   width: 100%;
   height: 60px;
-  background-color: #5e5f60;
+  background-color: #898992;
   padding: 0 15px;
+  position: relative;
 }
 div.container.container--outer.team div.container.container--inner div.content-holder div.content-box div.text-box p.name {
   margin-top: 8px;
@@ -2029,6 +2055,47 @@ div.container.container--outer.team div.container.container--inner div.content-h
 }
 div.container.container--outer.team div.container.container--inner div.content-holder div.content-box div.text-box p.position {
   color: rgba(255,255,255,0.5);
+}
+div.container.container--outer.team div.container.container--inner div.content-holder div.content-box div.text-box a.social {
+  width: 25px;
+  height: 25px;
+  background: url("assets/linkedin.png") center center no-repeat;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  -o-transition: background 0.3s ease-in-out;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  -ms-transition: background 0.3s ease-in-out;
+  -o-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+  -webkit-transition: background 0.3s ease-in-out;
+  -o-transition: background 0.3s ease-in-out;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  -ms-transition: background 0.3s ease-in-out;
+  -o-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+div.container.container--outer.team div.container.container--inner div.content-holder div.content-box div.text-box a.social:hover {
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  transform: scale(1.3);
+  background: url("assets/linkedin.png") center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 div.container.container--outer.contact {
   background-color: #daddda;
@@ -2094,12 +2161,26 @@ div.container.container--outer.contact div.container.container--inner div.conten
 }
 div.container.container--outer.popup {
   position: fixed;
-  z-index: 2000;
+  z-index: 99999;
   background-color: rgba(0,0,0,0.7);
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+}
+div.container.container--outer.popup#you div.container.container--inner div.popup {
+  min-height: auto;
+}
+div.container.container--outer.popup#you div.container.container--inner div.popup div.content-holder div.content-box:nth-child(1) {
+  width: 100%;
+}
+div.container.container--outer.popup#you div.container.container--inner div.popup div.content-holder div.content-box div.text-content {
+  padding: 50px;
+}
+div.container.container--outer.popup#you div.container.container--inner div.popup div.content-holder div.content-box div.text-content p.body_text {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
 }
 @media screen and (max-width: 500px) {
   div.container.container--outer.popup {
@@ -2126,6 +2207,7 @@ div.container.container--outer.popup div.container.container--inner div.popup {
     max-width: unset;
     width: auto;
     height: auto;
+    min-height: 400px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -2243,6 +2325,7 @@ div.container.container--outer.popup div.container.container--inner div.popup di
   -o-align-items: flex-start;
   align-items: flex-start;
   padding: 20px;
+  max-width: unset;
 }
 div.container.container--outer.popup div.container.container--inner div.popup div.content-holder div.content-box div.text-content h2 {
   text-align: left;
@@ -2280,6 +2363,7 @@ div.container.container--outer.popup div.container.container--inner div.popup di
 @media screen and (max-width: 500px) {
   div.container.container--outer.popup div.container.container--inner div.popup div.content-holder div.content-box:nth-child(1) {
     width: 100%;
+    min-height: 195px;
   }
 }
 div.container.container--outer.popup div.container.container--inner div.popup div.content-holder div.content-box:nth-child(2) {
@@ -2289,12 +2373,15 @@ div.container.container--outer.popup div.container.container--inner div.popup di
 @media screen and (max-width: 500px) {
   div.container.container--outer.popup div.container.container--inner div.popup div.content-holder div.content-box:nth-child(2) {
     width: 100%;
+    min-height: 200px;
   }
 }
 #slider {
   height: 100%;
   top: 0;
   bottom: 0;
+  left: 0;
+  right: 0;
   position: relative;
   z-index: 0;
   text-align: center;
@@ -2317,4 +2404,22 @@ div.container.container--outer.popup div.container.container--inner div.popup di
 }
 #slider div:last-child {
   background-image: url("assets/rotator/03.jpg");
+}
+_:-ms-input-placeholder,
+:root p.body_text {
+  max-width: 480px;
+}
+_:-ms-input-placeholder,
+:root div.container.container--outer.offer.first div.absolute-background {
+  display: block;
+  left: 0;
+  right: 0;
+}
+_:-ms-input-placeholder,
+:root div.container.container--outer.offer.first {
+  background-color: #daddda;
+}
+_:-ms-input-placeholder,
+:root div.container.container--outer.what div.container.container--inner {
+  height: 100%;
 }
